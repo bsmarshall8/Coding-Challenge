@@ -1,7 +1,6 @@
-package com.slack.exercise.api
+package com.slack.exercise.model
 
 import com.google.gson.annotations.SerializedName
-
 /**
  * User model returned by the API.
  */
