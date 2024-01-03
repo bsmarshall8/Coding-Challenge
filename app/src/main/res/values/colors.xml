@@ -4,9 +4,8 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
-    <color name="searchItemBackground">#FFFFFFF</color>
-    <color name="searchResultUsername">#616061</color>
+    <color name="searchItemBackground">#FFFFFF</color>
     <color name="searchResultName">#1D1C1D</color>
+    <color name="searchResultUsername">#616061</color>
     <color name="divider">#DDDDDD</color>
-
 </resources>
