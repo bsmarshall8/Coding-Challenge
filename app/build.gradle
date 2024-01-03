@@ -48,6 +48,7 @@ dependencies {
     implementation "com.squareup.retrofit2:adapter-rxjava3:${versions.retrofit}"
     implementation "com.squareup.retrofit2:converter-gson:${versions.retrofit}"
     implementation "com.squareup.okhttp3:logging-interceptor:${versions.okhttp}"
+    implementation "com.github.bumptech.glide:glide:${versions.glide}"
 
     implementation "com.google.dagger:dagger:${versions.dagger}"
     implementation "androidx.constraintlayout:constraintlayout:${versions.constraintLayout}"
@@ -60,5 +61,5 @@ dependencies {
     androidTestImplementation "androidx.test.espresso:espresso-core:${versions.espresso}"
 
     // debugImplementation because LeakCanary should only run in debug builds.
-    debugImplementation "com.squareup.leakcanary:leakcanary-android:${versions.leakcanary}"
+    //debugImplementation "com.squareup.leakcanary:leakcanary-android:${versions.leakcanary}"
 }
