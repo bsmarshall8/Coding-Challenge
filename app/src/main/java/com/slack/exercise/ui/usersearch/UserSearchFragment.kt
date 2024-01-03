@@ -7,6 +7,8 @@ import android.view.MenuInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
+import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.slack.exercise.R
 import com.slack.exercise.databinding.FragmentUserSearchBinding
@@ -14,6 +16,7 @@ import com.slack.exercise.model.UserSearchResult
 import dagger.android.support.DaggerFragment
 import timber.log.Timber
 import javax.inject.Inject
+
 
 /**
  * Main fragment displaying and handling interactions with the view.
@@ -84,11 +87,15 @@ class UserSearchFragment : DaggerFragment(), UserSearchContract.View {
   }
 
   private fun setUpList() {
+    val itemDecoration = DividerItemDecoration(context, DividerItemDecoration.VERTICAL)
+    itemDecoration.setDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.divider)!!)
+
     with(userSearchBinding.userSearchResultList) {
       adapter = UserSearchAdapter()
       layoutManager = LinearLayoutManager(activity).apply {
         orientation = LinearLayoutManager.VERTICAL
       }
+      addItemDecoration(itemDecoration)
       setHasFixedSize(true)
     }
   }

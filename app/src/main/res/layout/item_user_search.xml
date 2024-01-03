@@ -3,18 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="@dimen/item_margin"
+    android:layout_height="@dimen/item_height"
     android:orientation="horizontal"
     android:paddingStart="@dimen/item_padding_start_and_end"
-    android:paddingTop="@dimen/item_padding_top_and_bottom"
     android:paddingEnd="@dimen/item_padding_start_and_end"
+    android:paddingTop="@dimen/item_padding_top_and_bottom"
     android:paddingBottom="@dimen/item_padding_top_and_bottom">
 
     <androidx.constraintlayout.utils.widget.ImageFilterView
         android:id="@+id/imageViewAvatar"
-        android:layout_width="@dimen/avatar_dimens"
-        android:layout_height="@dimen/avatar_dimens"
+        android:layout_width="@dimen/avatar_height_and_width"
+        android:layout_height="@dimen/avatar_height_and_width"
         android:contentDescription="@string/list_item_avatar_content_description"
         app:roundPercent=".4"
         tools:src="@tools:sample/avatars" />
@@ -35,5 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginStart="8dp"
-        tools:text="broche" />
+        android:maxLines="1"
+        android:ellipsize="end"
+        tools:text="broch" />
 </LinearLayout>
