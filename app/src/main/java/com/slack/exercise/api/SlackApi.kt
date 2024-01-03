@@ -1,5 +1,6 @@
 package com.slack.exercise.api
 
+import com.slack.exercise.model.User
 import io.reactivex.rxjava3.core.Single
 
 /**
