@@ -9,8 +9,8 @@ import io.reactivex.rxjava3.core.Single
  */
 interface UserSearchResultDataProvider {
 
-  /**
-   * Returns a [Single] emitting a set of [UserSearchResult].
-   */
-  fun fetchUsers(searchTerm: String): Single<Set<UserSearchResult>>
+    /**
+     * Returns a [Single] emitting a set of [UserSearchResult].
+     */
+    fun fetchUsers(searchTerm: String): Single<Set<UserSearchResult>>
 }

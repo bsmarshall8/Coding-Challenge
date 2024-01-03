@@ -10,9 +10,9 @@ import dagger.android.ContributesAndroidInjector
  */
 @Module
 abstract class BindingModule {
-  @ContributesAndroidInjector
-  abstract fun bindUserSearchActivity(): UserSearchActivity
+    @ContributesAndroidInjector
+    abstract fun bindUserSearchActivity(): UserSearchActivity
 
-  @ContributesAndroidInjector
-  abstract fun bindUserSearchFragment(): UserSearchFragment
+    @ContributesAndroidInjector
+    abstract fun bindUserSearchFragment(): UserSearchFragment
 }

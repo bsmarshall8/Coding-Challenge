@@ -14,5 +14,5 @@ import javax.inject.Singleton
 @Singleton
 @Component(modules = [AppModule::class, AndroidInjectionModule::class, BindingModule::class])
 interface AppComponent : AndroidInjector<DaggerApplication> {
-  fun userSearchResultDataProvider(): UserSearchResultDataProvider
+    fun userSearchResultDataProvider(): UserSearchResultDataProvider
 }
