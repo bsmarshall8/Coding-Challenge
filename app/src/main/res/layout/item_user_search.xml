@@ -18,6 +18,9 @@
         app:roundPercent=".4"
         tools:src="@tools:sample/avatars" />
 
+    <!--
+    TODO Account for scale - very long names accessibility size increase
+    -->
     <TextView
         android:id="@+id/display_name"
         style="@style/Name"
