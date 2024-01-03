@@ -1,12 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/item_margin"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:paddingStart="@dimen/item_padding_start_and_end"
+    android:paddingTop="@dimen/item_padding_top_and_bottom"
+    android:paddingEnd="@dimen/item_padding_start_and_end"
+    android:paddingBottom="@dimen/item_padding_top_and_bottom">
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/imageViewAvatar"
+        android:layout_width="@dimen/avatar_dimens"
+        android:layout_height="@dimen/avatar_dimens"
+        android:contentDescription="@string/list_item_avatar_content_description"
+        app:roundPercent=".4"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/display_name"
+        style="@style/Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="12dp"
+        tools:text="Breese Roche" />
 
     <TextView
         android:id="@+id/username"
+        style="@style/Username"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="8dp"
+        tools:text="broche" />
 </LinearLayout>

@@ -50,6 +50,7 @@ dependencies {
     implementation "com.squareup.okhttp3:logging-interceptor:${versions.okhttp}"
 
     implementation "com.google.dagger:dagger:${versions.dagger}"
+    implementation "androidx.constraintlayout:constraintlayout:${versions.constraintLayout}"
     kapt "com.google.dagger:dagger-compiler:${versions.dagger}"
     kapt "com.google.dagger:dagger-android-processor:${versions.dagger}"
     implementation "com.google.dagger:dagger-android-support:${versions.dagger}"
@@ -59,5 +60,5 @@ dependencies {
     androidTestImplementation "androidx.test.espresso:espresso-core:${versions.espresso}"
 
     // debugImplementation because LeakCanary should only run in debug builds.
-    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.12'
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:${versions.leakcanary}"
 }
