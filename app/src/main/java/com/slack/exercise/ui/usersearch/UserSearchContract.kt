@@ -14,7 +14,7 @@ interface UserSearchContract {
         /**
          * Call when [UserSearchResult] are returned.
          */
-        fun onUserSearchResults(results: Set<UserSearchResult>)
+        fun onUserSearchResults(results: List<UserSearchResult>)
 
         /**
          * Call when an error occurs during the execution of search queries.

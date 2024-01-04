@@ -46,7 +46,7 @@ class UserSearchPresenter @Inject constructor(
                     if (results.isEmpty()) {
                         addSearchTermToDenylist(currentSearchTerm)
                     }
-                    this@UserSearchPresenter.view?.onUserSearchResults(results)
+                    this@UserSearchPresenter.view?.onUserSearchResults(results.toList())
                 },
                 { error ->
                     this@UserSearchPresenter.view?.onUserSearchError(error)

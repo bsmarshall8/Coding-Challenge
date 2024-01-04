@@ -75,9 +75,9 @@ class UserSearchFragment : DaggerFragment(), UserSearchContract.View {
         })
     }
 
-    override fun onUserSearchResults(results: Set<UserSearchResult>) {
+    override fun onUserSearchResults(results: List<UserSearchResult>) {
         val adapter = userSearchBinding.userSearchResultList.adapter as UserSearchAdapter
-        adapter.setResults(results)
+        adapter.submitList(results)
     }
 
     override fun onUserSearchError(error: Throwable) {
@@ -99,12 +99,12 @@ class UserSearchFragment : DaggerFragment(), UserSearchContract.View {
         )
 
         with(userSearchBinding.userSearchResultList) {
-            adapter = UserSearchAdapter()
             layoutManager = LinearLayoutManager(activity).apply {
                 orientation = LinearLayoutManager.VERTICAL
             }
-            addItemDecoration(itemDecoration)
             setHasFixedSize(true)
+            adapter = UserSearchAdapter()
+            addItemDecoration(itemDecoration)
         }
     }
 }

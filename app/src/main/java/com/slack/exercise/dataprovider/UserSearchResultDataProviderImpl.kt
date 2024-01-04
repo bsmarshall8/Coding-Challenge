@@ -18,11 +18,10 @@ class UserSearchResultDataProviderImpl @Inject constructor(
     /**
      * Returns a [Single] emitting a set of [UserSearchResult].
      */
-    override fun fetchUsers(searchTerm: String): Single<Set<UserSearchResult>> {
+    override fun fetchUsers(searchTerm: String): Single<List<UserSearchResult>> {
         return slackApi.searchUsers(searchTerm)
             .map {
                 it.map { user -> UserSearchResult(user.username, user.displayName, user.avatarUrl) }
-                    .toSet()
             }
     }
 }

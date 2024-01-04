@@ -12,5 +12,5 @@ interface UserSearchResultDataProvider {
     /**
      * Returns a [Single] emitting a set of [UserSearchResult].
      */
-    fun fetchUsers(searchTerm: String): Single<Set<UserSearchResult>>
+    fun fetchUsers(searchTerm: String): Single<List<UserSearchResult>>
 }
