@@ -1,6 +1,5 @@
 package com.slack.exercise
 
-import android.content.Context
 import com.slack.exercise.dagger.DaggerAppComponent
 import dagger.android.AndroidInjector
 import dagger.android.DaggerApplication
