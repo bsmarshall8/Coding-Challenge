@@ -5,17 +5,28 @@ import android.content.SharedPreferences
 import com.slack.exercise.R
 import java.io.BufferedReader
 import java.io.InputStreamReader
+import javax.inject.Inject
+import javax.inject.Singleton
 
 /**
  * Storage solution for fetching/storing denylist
- */
-//TODO figure out DI
-class DataStore(private val context: Context) {
-
+ * */
+@Singleton
+class DenylistProvider @Inject constructor(private val context: Context) {
     private val sharedPreferences: SharedPreferences =
         context.getSharedPreferences(SHARED_PREFS_NAME, Context.MODE_PRIVATE)
+    var denylist: MutableSet<String>
 
-    fun readRawFileToSet(): Set<String> {
+    init {
+        denylist = if (getDenylistFromPreferences() == null) {
+            readRawFileToSet().toMutableSet()
+        } else {
+            getDenylistFromPreferences()!!.toMutableSet()
+        }
+        println(denylist)
+    }
+
+    private fun readRawFileToSet(): Set<String> {
         val resultSet = mutableSetOf<String>()
         try {
             context.resources.openRawResource(R.raw.denylist).use { inputStream ->
@@ -34,13 +45,13 @@ class DataStore(private val context: Context) {
         return resultSet
     }
 
-    fun saveSetToPreferences(set: Set<String>) {
+    fun persistDenylist() {
         val editor = sharedPreferences.edit()
-        editor.putStringSet(DENYLIST_KEY, set)
+        editor.putStringSet(DENYLIST_KEY, denylist)
         editor.apply()
     }
 
-    fun getDenylistFromPreferences(): Set<String>? {
+    private fun getDenylistFromPreferences(): Set<String>? {
         return sharedPreferences.getStringSet(DENYLIST_KEY, null)
     }
 

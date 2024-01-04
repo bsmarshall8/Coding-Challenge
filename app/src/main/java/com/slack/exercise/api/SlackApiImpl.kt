@@ -44,6 +44,5 @@ class SlackApiImpl @Inject constructor() : SlackApi {
                 it.users
             }
             .subscribeOn(Schedulers.io())
-
     }
 }
