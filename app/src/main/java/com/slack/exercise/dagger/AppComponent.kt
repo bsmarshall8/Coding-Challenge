@@ -2,8 +2,8 @@ package com.slack.exercise.dagger
 
 import android.content.Context
 import com.slack.exercise.App
-import com.slack.exercise.dataprovider.DenylistProvider
 import com.slack.exercise.dataprovider.UserSearchResultDataProvider
+import com.slack.exercise.denylist.DenylistProvider
 import com.slack.exercise.ui.dagger.BindingModule
 import dagger.BindsInstance
 import dagger.Component
