@@ -1,4 +1,4 @@
-package com.slack.exercise.dataprovider
+package com.slack.exercise.denylist
 
 import android.content.Context
 import android.content.SharedPreferences

@@ -1,6 +1,6 @@
 package com.slack.exercise.ui.usersearch
 
-import com.slack.exercise.dataprovider.DenylistProvider
+import com.slack.exercise.denylist.DenylistProvider
 import com.slack.exercise.dataprovider.UserSearchResultDataProvider
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.Single

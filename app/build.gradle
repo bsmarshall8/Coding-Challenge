@@ -52,6 +52,9 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:${versions.retrofit}"
     implementation "com.squareup.okhttp3:logging-interceptor:${versions.okhttp}"
     implementation "com.github.bumptech.glide:glide:${versions.glide}"
+    implementation "androidx.room:room-runtime:${versions.room}"
+    implementation "androidx.room:room-ktx:${versions.room}"
+    kapt "androidx.room:room-compiler:${versions.room}"
 
     implementation "com.google.dagger:dagger:${versions.dagger}"
     implementation "androidx.constraintlayout:constraintlayout:${versions.constraintLayout}"

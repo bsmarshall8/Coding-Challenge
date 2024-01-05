@@ -12,13 +12,14 @@ buildscript {
             rxAndroid       : '3.0.2',
             retrofit        : '2.9.0',
             constraintLayout: '2.1.4',
+            room            : '2.6.1',
             leakCanary      : '2.12',
             glide           : '4.10.0',
             timber          : '4.7.1',
             okhttp          : '4.11.0',
             junit           : '4.13.2',
             androidxJunit   : '1.1.5',
-            espresso        : '3.5.1'
+            espresso        : '3.5.1',
     ]
     repositories {
         google()

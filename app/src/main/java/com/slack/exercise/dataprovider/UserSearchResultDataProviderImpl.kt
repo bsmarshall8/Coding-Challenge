@@ -13,6 +13,7 @@ import javax.inject.Singleton
 @Singleton
 class UserSearchResultDataProviderImpl @Inject constructor(
     private val slackApi: SlackApi
+   // private val userSearchResultDao: UserSearchResultDao
 ) : UserSearchResultDataProvider {
 
     /**
@@ -20,8 +21,25 @@ class UserSearchResultDataProviderImpl @Inject constructor(
      */
     override fun fetchUsers(searchTerm: String): Single<List<UserSearchResult>> {
         return slackApi.searchUsers(searchTerm)
-            .map {
-                it.map { user -> UserSearchResult(user.username, user.displayName, user.avatarUrl) }
+            .map { response ->
+                val userSearchResults = response.map { user ->
+                    UserSearchResult(user.username, user.displayName, user.avatarUrl)
+                }
+                // Save the results to the local database for offline use
+               // saveUsersToLocalDatabase(userSearchResults)
+                userSearchResults
             }
     }
+
+//    private fun saveUsersToLocalDatabase(userSearchResults: List<UserSearchResult>) {
+//        val dbUserSearchResults = userSearchResults.map { user ->
+//            DbUserSearchResult(user.username, user.displayName, user.avatarUrl)
+//        }
+//        // Save the results to the local database in the background
+//        Completable.fromAction {
+//            userSearchResultDao.insertUserSearchResults(dbUserSearchResults)
+//        }
+//            .subscribeOn(Schedulers.io())
+//            .subscribe()
+//    }
 }

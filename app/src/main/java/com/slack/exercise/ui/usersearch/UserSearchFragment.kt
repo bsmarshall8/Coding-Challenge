@@ -35,7 +35,7 @@ class UserSearchFragment : DaggerFragment(), UserSearchContract.View {
     ): View {
         super.onCreateView(inflater, container, savedInstanceState)
         userSearchBinding = FragmentUserSearchBinding.inflate(inflater, container, false)
-        setHasOptionsMenu(true)
+        setHasOptionsMenu(true) //TODO replace with MenuProvider
         return userSearchBinding.root
     }
 
